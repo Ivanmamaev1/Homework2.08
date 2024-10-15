@@ -41,10 +41,10 @@ final class ResultViewController: UIViewController {
             typeOfAnimal[animal, default: 0] += 1
         }
         
-        guard let sortedTypeOfAnimal = typeOfAnimal.max(
+        guard let commonTypeOfAnimal = typeOfAnimal.max(
             by: { $0.value < $1.value
             })?.key else { return }
         
-        showResult(of: sortedTypeOfAnimal)
+        showResult(of: commonTypeOfAnimal)
     }
 }
