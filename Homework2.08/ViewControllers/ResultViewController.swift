@@ -24,11 +24,6 @@ final class ResultViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    func showResult(of animal: Animal) {
-        resultLabel.text = "Вы - \(animal.rawValue)"
-        definitionLabel.text = animal.definition
-    }
-    
     func showAnimal() {
         var typeOfAnimal: [Animal: Int] = [:]
         var animals: [Animal] = []
@@ -46,5 +41,10 @@ final class ResultViewController: UIViewController {
             })?.key else { return }
         
         showResult(of: commonTypeOfAnimal)
+    }
+    
+    private func showResult(of animal: Animal) {
+        resultLabel.text = "Вы - \(animal.rawValue)"
+        definitionLabel.text = animal.definition
     }
 }
